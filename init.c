@@ -5,7 +5,7 @@
 ** Login   <david_h@epitech.net>
 ** 
 ** Started on  Sun Dec  7 15:51:11 2014 david_h
-** Last update Sun Dec  7 19:04:13 2014 david_h
+** Last update Mon Dec  8 02:31:49 2014 david_h
 */
 
 #include <SDL2/SDL.h>
@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "./include/struct.h"
 
-s_sdl		*create_win()
+s_sdl		*create_win(int x, int c)
 {
   s_sdl		*s_init;
 
@@ -21,8 +21,8 @@ s_sdl		*create_win()
   s_init->window = SDL_CreateWindow(TITLE,
 				    SDL_WINDOWPOS_CENTERED,
 				    SDL_WINDOWPOS_CENTERED,
-				    X_WIN,
-				    Y_WIN,
+				    c * L_TILE,
+				    x * H_TILE,
 				    0);
   return (s_init);
 }

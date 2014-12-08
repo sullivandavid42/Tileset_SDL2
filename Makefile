@@ -5,7 +5,7 @@
 ## Login   <david_h@epitech.net>
 ## 
 ## Started on  Sun Dec  7 15:56:21 2014 david_h
-## Last update Sun Dec  7 21:59:14 2014 david_h
+## Last update Mon Dec  8 02:22:46 2014 david_h
 ##
 
 NAME 	= Impossible_Game
@@ -16,7 +16,8 @@ LIB	= -lSDL2 -lSDL2_image
 
 SRC	= main.c \
 	  init.c \
-	  tile_map.c
+	  tile_map.c \
+	  get_map.c
 
 OBJ	= $(SRC:.c=.o)
 
