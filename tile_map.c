@@ -5,7 +5,7 @@
 ** Login   <david_h@epitech.net>
 ** 
 ** Started on  Sun Dec  7 20:52:29 2014 david_h
-** Last update Mon Dec  8 02:25:59 2014 david_h
+** Last update Mon Dec  8 11:26:37 2014 david_h
 */
 
 #include <stdlib.h>
@@ -36,6 +36,9 @@ void		print_tile(s_sdl *s_init, int **map, int x, int c)
   SDL_Rect	rect_dest;
   SDL_Rect	rect_src;
   SDL_Texture	*sprite;
+  SDL_Texture	*background;
+  int		X;
+  int		Y;
 
   sprite = load_tileset(s_init);
   if (sprite == NULL)
@@ -50,8 +53,10 @@ void		print_tile(s_sdl *s_init, int **map, int x, int c)
 	{
 	  rect_dest.x = i * L_TILE;
 	  rect_dest.y = j * H_TILE;
-	  rect_src.x = (map[j][i]) * L_TILE;
-	  rect_src.y = 0;
+	  X = map[j][i] % 8;
+	  Y = map[j][i] / 8;
+	  rect_src.x = X * L_TILE;
+	  rect_src.y = Y * H_TILE;
 	  SDL_RenderCopy(s_init->renderer, sprite, &rect_src, &rect_dest);
 	}
     }

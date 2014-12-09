@@ -5,7 +5,7 @@
 ** Login   <david_h@epitech.net>
 ** 
 ** Started on  Sun Dec  7 15:48:34 2014 david_h
-** Last update Mon Dec  8 02:27:46 2014 david_h
+** Last update Tue Dec  9 17:49:59 2014 david_h
 */
 
 #ifndef STRUCT_H_
@@ -13,8 +13,8 @@
 
 #include <SDL2/SDL.h>
 
-#define L_TILE 16
-#define H_TILE 16
+#define L_TILE 64
+#define H_TILE 64
 
 //#define NB_BLOC_MAP_L 10
 //#define NB_BLOC_MAP_H 6
@@ -23,8 +23,8 @@
 #define X_WIN (NB_BLOC_MAP_L * L_TILE) 
 #define Y_WIN (NB_BLOC_MAP_H * H_TILE)
 
-#define TILESET_PATH "./Ressources/sprite.png"
-
+#define TILESET_PATH "./Ressources/tileset.png"
+#define BACKGROUND_PATH "./Ressources/bg.jpg"
 
 typedef struct
 {
