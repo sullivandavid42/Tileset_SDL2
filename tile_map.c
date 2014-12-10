@@ -5,7 +5,7 @@
 ** Login   <david_h@epitech.net>
 ** 
 ** Started on  Sun Dec  7 20:52:29 2014 david_h
-** Last update Mon Dec  8 11:26:37 2014 david_h
+** Last update Wed Dec 10 12:28:09 2014 david_h
 */
 
 #include <stdlib.h>
@@ -61,4 +61,5 @@ void		print_tile(s_sdl *s_init, int **map, int x, int c)
 	}
     }
   SDL_RenderPresent(s_init->renderer);
+  event(s_init);
 }
