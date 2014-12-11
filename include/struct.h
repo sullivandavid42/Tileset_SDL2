@@ -5,7 +5,7 @@
 ** Login   <david_h@epitech.net>
 ** 
 ** Started on  Sun Dec  7 15:48:34 2014 david_h
-** Last update Wed Dec 10 12:24:28 2014 david_h
+** Last update Thu Dec 11 00:25:11 2014 david_h
 */
 
 #ifndef STRUCT_H_
@@ -29,6 +29,8 @@ typedef struct
 //SDL_Texture *load_character(s_sdl *s_init);
 s_sdl	*create_win(int x, int c);
 s_sdl	*create_renderer(s_sdl *s_init);
-void	print_tile(s_sdl *s_init, int **map, int x, int c);
+SDL_Texture     *load_tileset(s_sdl *s_init);
+int     event(s_sdl *s_init, int **table, int xe, int ce);
+void	print_tile(s_sdl *s_init, int **map, int xe, int ce, SDL_Texture *tileset);
 
 #endif /* _STRUCT_H_ */

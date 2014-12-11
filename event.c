@@ -5,7 +5,7 @@
 ** Login   <david_h@epitech.net>
 ** 
 ** Started on  Tue Dec  9 18:17:29 2014 david_h
-** Last update Wed Dec 10 13:55:56 2014 david_h
+** Last update Wed Dec 10 15:26:23 2014 david_h
 */
 
 #include <stdio.h>
@@ -37,7 +37,7 @@ void			pos_character(SDL_Rect *character, int *x_char, int *y_char)
   character->h = 64;
 }
 
-int			event(s_sdl *s_init)
+int			event(s_sdl *s_init, int **table, int xe, int ce)
 {
   SDL_Event		event;
   int			i;
@@ -45,7 +45,11 @@ int			event(s_sdl *s_init)
   SDL_Rect		dest;
   int			x;
   int			y;
+  SDL_Texture		*tileset;
 
+  tileset = load_tileset(s_init);
+  if (tileset == NULL)
+    return (0);
   if (!(character = (load_character(s_init))))
     printf("Character NULL");
   i = 0;
@@ -64,7 +68,6 @@ int			event(s_sdl *s_init)
 	      return (0);
 	    case SDLK_LEFT:
 	      x = x - 1;
-	      printf("c");
 	      break;
 	    case SDLK_RIGHT:
 	      x = x + 1;
@@ -79,8 +82,8 @@ int			event(s_sdl *s_init)
 	  break;
 	}
       pos_character(&dest, &x, &y);
+      print_tile(s_init, table, xe, ce, tileset);
       SDL_RenderCopy(s_init->renderer, character, NULL, &dest);
       SDL_RenderPresent(s_init->renderer);
-      //SDL_RenderClear(s_init->renderer);
     }
 }

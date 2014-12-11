@@ -5,7 +5,7 @@
 ** Login   <david_h@epitech.net>
 ** 
 ** Started on  Sun Dec  7 20:52:29 2014 david_h
-** Last update Wed Dec 10 12:28:09 2014 david_h
+** Last update Thu Dec 11 12:36:52 2014 david_h
 */
 
 #include <stdlib.h>
@@ -29,20 +29,17 @@ SDL_Texture	*load_tileset(s_sdl *s_init)
   return (tileset);
 }
 
-void		print_tile(s_sdl *s_init, int **map, int x, int c)
+void		print_tile(s_sdl *s_init, int **map, int x, int c, SDL_Texture *tileset)
 {
   int	        i;
   int		j;
   SDL_Rect	rect_dest;
   SDL_Rect	rect_src;
   SDL_Texture	*sprite;
-  SDL_Texture	*background;
   int		X;
   int		Y;
 
-  sprite = load_tileset(s_init);
-  if (sprite == NULL)
-    printf("Il est NULL ton sprite");
+  sprite = tileset;
   rect_src.w = L_TILE;
   rect_src.h = H_TILE;
   rect_dest.w = L_TILE;
@@ -60,6 +57,4 @@ void		print_tile(s_sdl *s_init, int **map, int x, int c)
 	  SDL_RenderCopy(s_init->renderer, sprite, &rect_src, &rect_dest);
 	}
     }
-  SDL_RenderPresent(s_init->renderer);
-  event(s_init);
 }

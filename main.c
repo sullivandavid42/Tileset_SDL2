@@ -1,4 +1,3 @@
-
 /*
 ** main.c for Impossible_Game in /home/david_h/Personnal_Project
 ** 
@@ -6,7 +5,7 @@
 ** Login   <david_h@epitech.net>
 ** 
 ** Started on  Sun Dec  7 15:46:33 2014 david_h
-** Last update Wed Dec 10 12:26:12 2014 david_h
+** Last update Thu Dec 11 00:24:42 2014 david_h
 */
 
 #include <stdio.h>
@@ -27,7 +26,8 @@ int	main()
     return (printf("Loading error.\n"));
   s_init = create_win(x, c);
   s_init = create_renderer(s_init);
-  print_tile(s_init, table, x, c);
+  event(s_init, table, x, c);
+  // print_tile(s_init, table, x, c);
   destroy_sdl(s_init);
   return (0);
 }
